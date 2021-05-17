@@ -147,7 +147,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\DreamUtils;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";winmm_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -270,15 +270,21 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\DreamUtils\DreamUtils.cpp" />
+    <ClCompile Include="CommandLine.cpp" />
+    <ClCompile Include="MemoryModule.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="WinmmHooker.cpp" />
+    <ClInclude Include="..\DreamUtils\DreamUtils.h" />
+    <ClInclude Include="CommandLine.h" />
     <ClInclude Include="exports.h" />
+    <ClInclude Include="MemoryModule.h" />
+    <ClInclude Include="sha1.hpp" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="WinmmHooker.h" />
     <MASM Include="D:\Projects\Vrchat\Project Dream\winmm\winmm_asm.asm" />
     <ClCompile Include="main.cpp" />
     <None Include="D:\Projects\Vrchat\Project Dream\winmm\winmm.def" />
-    <ClInclude Include="D:\Projects\Vrchat\Project Dream\winmm\hook_macro.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

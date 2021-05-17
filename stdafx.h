@@ -9,7 +9,9 @@
 
 #include <stdio.h>
 #include <string>
+#include <vector>
 
 using namespace std;
 
 #include "exports.h"
+#include "sha1.hpp"
