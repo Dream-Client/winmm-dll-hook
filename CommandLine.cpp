@@ -6,31 +6,29 @@
 
 bool CommandLine::_noHost = false;
 
-bool CommandLine::Init()
-{
-	LPWSTR *szArglist;
-	int nArgs;
+bool CommandLine::Init() {
+  LPWSTR *szArglist = nullptr;
+  int nArgs;
 
-	szArglist = CommandLineToArgvW(GetCommandLineW(), &nArgs);
+  szArglist = CommandLineToArgvW(GetCommandLineW(), &nArgs);
 
-	if (NULL == szArglist) {
-		return false;
-	}
+  if(nullptr == szArglist) {
+    return false;
+  }
 
-	for (int i = 0; i < nArgs; i++) {
-		if (wcsstr(L"--no-mods", szArglist[i])) {
-			LocalFree(szArglist);
-			return false;
-		}
+  for(int i = 0; i < nArgs; i++) {
+    if(wcsstr(L"--no-mods", szArglist[i])) {
+      LocalFree(szArglist);
+      return false;
+    }
 
-		if (wcsstr(L"--no-host", szArglist[i])) {
-			_noHost = true;
-			continue;
-		}
-	}
+    if(wcsstr(L"--no-host", szArglist[i])) {
+      _noHost = true;
+      continue;
+    }
+  }
 
-	LocalFree(szArglist);
+  LocalFree(szArglist);
 
-	return true;
-	return true;
+  return true;
 }

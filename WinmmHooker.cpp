@@ -2,7 +2,7 @@
 #include "WinmmHooker.h"
 
 
-extern "C" UINT_PTR mProcs[181] = { 0 };
+extern "C" UINT_PTR mProcs[181] = {0};
 
 LPCSTR mImportNames[] = {
   "CloseDriver",
@@ -190,29 +190,29 @@ LPCSTR mImportNames[] = {
 
 HINSTANCE WinmmHooker::_HinstDLL = nullptr;
 
-bool WinmmHooker::Hook()
-{
-	wchar_t* swPath = new wchar_t[MAX_PATH];
+bool WinmmHooker::Hook() {
+  wchar_t* swPath = new wchar_t[MAX_PATH];
 
-	if (GetWindowsDirectoryW(swPath, MAX_PATH) == 0) {
-		return false;
-	}
+  if(GetWindowsDirectoryW(swPath, MAX_PATH) == 0) {
+    return false;
+  }
 
-	wstring winmmPath = wstring(swPath);
-	winmmPath.append(L"\\System32\\winmm.dll");
+  wstring winmmPath = wstring(swPath);
+  winmmPath.append(L"\\System32\\winmm.dll");
 
-	_HinstDLL = LoadLibraryW(winmmPath.c_str());
+  _HinstDLL = LoadLibraryW(winmmPath.c_str());
 
-	if (!_HinstDLL) {
-		return false;
-	}
+  if(!_HinstDLL) {
+    return false;
+  }
 
-	for (int i = 0; i < 181; ++i) {
-		mProcs[i] = (UINT_PTR)GetProcAddress(_HinstDLL, mImportNames[i]);
-	}
+  for(int i = 0; i < 181; ++i) {
+    mProcs[i] = (UINT_PTR)GetProcAddress(_HinstDLL, mImportNames[i]);
+  }
+
+  return true;
 }
 
-void WinmmHooker::Free()
-{
-	FreeLibrary(_HinstDLL);
+void WinmmHooker::Free() {
+  FreeLibrary(_HinstDLL);
 }

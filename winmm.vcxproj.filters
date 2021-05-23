@@ -4,9 +4,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="WinmmHooker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -19,6 +16,23 @@
     <ClCompile Include="..\DreamUtils\DreamUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DreamConsole.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DreamLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LicenceLoader.cpp" />
+    <ClCompile Include="ClientDownloader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="exports.h">
@@ -39,8 +53,31 @@
     <ClInclude Include="sha1.hpp">
       <Filter>Libs</Filter>
     </ClInclude>
+    <ClInclude Include="enums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DreamConsole.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DreamLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\DreamUtils\DreamUtils.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LicenceLoader.h" />
+    <ClInclude Include="Libs\httplib.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientDownloader.h" />
+    <ClInclude Include="Libs\json.hpp">
+      <Filter>Libs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
