@@ -13,9 +13,6 @@
     <ClCompile Include="MemoryModule.cpp">
       <Filter>Libs</Filter>
     </ClCompile>
-    <ClCompile Include="..\DreamUtils\DreamUtils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -33,6 +30,9 @@
     </ClCompile>
     <ClCompile Include="LicenceLoader.cpp" />
     <ClCompile Include="ClientDownloader.cpp" />
+    <ClCompile Include="..\DreamUtils\DreamUtils.cpp">
+      <Filter>Libs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="exports.h">
@@ -68,15 +68,15 @@
     <ClInclude Include="Utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\DreamUtils\DreamUtils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="LicenceLoader.h" />
     <ClInclude Include="Libs\httplib.h">
       <Filter>Libs</Filter>
     </ClInclude>
     <ClInclude Include="ClientDownloader.h" />
     <ClInclude Include="Libs\json.hpp">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DreamUtils\DreamUtils.h">
       <Filter>Libs</Filter>
     </ClInclude>
   </ItemGroup>

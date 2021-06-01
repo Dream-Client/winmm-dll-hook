@@ -19,12 +19,8 @@ string ClientDownloader::CreatePayload() {
 
 void ClientDownloader::Download() {
   string payload = CreatePayload();
-  wstringstream ss;
-  ss << payload.c_str();
 
-  Console::P(ss.str());
-
-  httplib::SSLClient cli("api.dreamclient.ovh");
+  httplib::SSLClient cli(DreamUtils::GetDownloadUrl());
   cli.set_follow_location(true);
   cli.set_connection_timeout(15, 0);
   cli.set_read_timeout(30, 0);
